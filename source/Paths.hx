@@ -463,7 +463,7 @@ class Paths
 
 	public static var modsList:Array<String> = [];
 	#if MODS_ALLOWED
-	static final modFolderPath:String = "content/";
+	static final modFolderPath:String = 'content/';
 
 	inline static public function mods(key:String = '')
 		return modFolderPath + key;
