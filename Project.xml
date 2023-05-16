@@ -47,11 +47,11 @@
 	<assets path="assets"/> 
 
 	<!-- PSYCH ENGINE CUSTOMIZATION -->
-	<define name="MODS_ALLOWED" if="desktop || android" />
+	<define name="MODS_ALLOWED" if="android" />
 	<!-- <define name="ACHIEVEMENTS_ALLOWED" /> -->
 	<define name="VIDEOS_ALLOWED"/>
 	
-	<define name="PE_MOD_COMPATIBILITY" if="desktop"/>
+	<define name="PE_MOD_COMPATIBILITY" if="android"/>
 	<define name="LUA_ALLOWED" />
 
 	<define name="CRASH_HANDLER" if="android" />
