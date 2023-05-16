@@ -43,6 +43,8 @@
 
 	<classpath name="source" />
 	
+	<assets path='example_content' rename='content' embed='false'/>
+	
 	<!-- No more preload folder, or libraries. -->
 	<assets path="assets"/> 
 
