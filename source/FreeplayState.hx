@@ -11,7 +11,7 @@ import flixel.text.FlxText;
 import flixel.tweens.FlxTween;
 import flixel.util.FlxColor;
 import sowy.TGTSquareButton;
-
+import openfl.utils.Assets;
 using StringTools;
 #if desktop
 import Discord.DiscordClient;
