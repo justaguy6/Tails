@@ -483,29 +483,31 @@ class RandomTitleLogo extends FlxSprite
 	}
 
 	public static function getTitlesList():Array<String>
-	{
-		var titleNames:Array<String> = [];
-		var foldersToCheck:Array<String> = [Paths.getPreloadPath('images/titles/')];
+{
+    var titleNames:Array<String> = [];
+    var foldersToCheck:Array<String> = [Paths.getPreloadPath('images/titles/')];
 
-		#if MODS_ALLOWED
-		foldersToCheck.insert(0, Paths.mods('images/titles/'));
-		foldersToCheck.insert(0, Paths.mods('global/images/titles/'));
-		if (Paths.currentModDirectory != null && Paths.currentModDirectory.length > 0)
-			foldersToCheck.insert(0, Paths.mods(Paths.currentModDirectory + '/images/titles/'));
-		#end
-		
-		for (folder in foldersToCheck){
-			Paths.iterateDirectory(folder, function(path:String){
-				var file = new haxe.io.Path(path);
+    #if MODS_ALLOWED
+    var androidInternalPath:String = lime.system.System.applicationStorageDirectory + "/images/titles/";
 
-				if (!titleNames.contains(file.file) && file.ext == "png")
-					titleNames.push(file.file);
-			});
-		}
+    foldersToCheck.insert(0, androidInternalPath);
+    #end
 
-		if (titleNames.length < 1)
-			titleNames.push("");
+    for (folder in foldersToCheck)
+    {
+        Paths.iterateDirectory(folder, function(path:String)
+        {
+            var file = new haxe.io.Path(path);
 
-		return titleNames;
-	}
+            if (!titleNames.contains(file.file) && file.ext == "png")
+                titleNames.push(file.file);
+        });
+    }
+
+    if (titleNames.length < 1)
+        titleNames.push("");
+
+    return titleNames;
+}
+
 }
